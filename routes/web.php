@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ForController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +15,55 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+
+Route::get('for1/{k}/{n}',[ForController::class,'for1']);
+Route::get('/for2/{a}/{b}',[ForController::class,'for2']);
+Route::get('/for3/{a}/{b}',[ForController::class,'for3']);
+Route::get('/for4/{qand}',[ForController::class,'for4']);
+Route::get('/for5/{konfet}',[ForController::class,'for5']);
+Route::get('/for6/{cand}',[ForController::class,'for6']);
+Route::get('/for7/{a}/{b}',[ForController::class,'for7']);
+Route::get('/for8/{a}/{b}',[ForController::class,'for8']);
+Route::get('/for9/{a}/{b}',[ForController::class,'for9']);
+Route::get('/for10/{n}',[ForController::class,'for10']);
+Route::get('/for11/{n}',[ForController::class,'for11']);
+// Route::get('/for11/{n}',[ForController::class,'for11']);
+
+
+
+Route::get('/bol1/{a}',[ForController::class,'bol1']);
+Route::get('/bol2/{a}',[ForController::class,'bol2']);
+Route::get('/bol3/{a}',[ForController::class,'bol3']);
+Route::get('/bol4/{a}/{b}',[ForController::class,'bol4']);
+Route::get('/bol5/{a}/{b}',[ForController::class,'bol5']);
+Route::get('/bol6/{a}/{b}/{c}',[ForController::class,'bol6']);
+Route::get('/bol7/{a}/{b}/{c}',[ForController::class,'bol7']);
+Route::get('/bol8/{a}/{b}',[ForController::class,'bol8']);
+Route::get('/bol9/{a}/{b}',[ForController::class,'bol9']);
+Route::get('/bol10/{a}/{b}',[ForController::class,'bol10']);
+Route::get('/bol11/{a}/{b}',[ForController::class,'bol11']);
+Route::get('/bol12/{a}/{b}/{c}',[ForController::class,'bol12']);
+Route::get('/bol13/{a}/{b}/{c}',[ForController::class,'bol13']);
+Route::get('/bol14/{a}/{b}/{c}',[ForController::class,'bol14']);
+Route::get('/bol15/{a}/{b}/{c}',[ForController::class,'bol15']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,46 +83,24 @@ Route::get('/Sh', function () {
 Route::redirect('Sh', 'A');
 
 
-
-
-// Route::group(['prtefix' => 'boss/',function(){
-
-//     Route::get('/about', function () {
-//         return view('boss.about');
-//     })->name('boss.about');
-
-//     Route::get('/service', function () {
-//         return view('boss.service');
-//     })->name('boss.service');
-
-// }]);
-
-
-
-
-
-// Route::get('/client/about', function () {
-//     return view('client.about');
-// })->name('client.about');
-
-// Route::get('/client/service', function () {
-//     return view('client.service');
-// })->name('client.service');
-
-
-
 Route::get('/index', function () {
     return view('index');
 });
 
+Route::get('admin1',[AdminController::class,'adminx1']);
+Route::get('admin2',[AdminController::class,'adminx2']);
+
+Route::get('client1',[ClientController::class,'clientx1']);
+Route::get('client2',[ClientController::class,'clientx2']);
+
 
 Route::prefix('admin')->name('admin.')->group(function () {
 
-    Route::get('/admin1', function () {
-        return view('admin.admin1');
-    })->name('index1');
+    // Route::get('/admin1', function () {
+    //     return view('admin.admin1');
+    // })->name('index1');
 
-    Route::view('/admin2', 'admin.admin2')->name('index2');
+    // Route::view('/admin2', 'admin.admin2')->name('index2');
 
     Route::get('/admin3', function () {
         return view('admin.admin3');
@@ -140,11 +170,11 @@ Route::prefix('boss')->name('boss.')->group(function () {
 
 Route::prefix('client')->name('client.')->group(function () {
 
-    Route::get('/client1', function () {
-        return view('client.client1');
-    })->name('index1');
+    // Route::get('/client1', function () {
+    //     return view('client.client1');
+    // })->name('index1');
 
-    Route::view('/client2', 'client.client2')->name('index2');
+    // Route::view('/client2', 'client.client2')->name('index2');
 
     Route::get('/client3', function () {
         return view('client.client3');
