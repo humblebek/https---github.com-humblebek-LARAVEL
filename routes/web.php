@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ForController;
+use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,69 +19,42 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('for1/{k}/{n}',[ForController::class,'for1']);
-Route::get('/for2/{a}/{b}',[ForController::class,'for2']);
-Route::get('/for3/{a}/{b}',[ForController::class,'for3']);
-Route::get('/for4/{qand}',[ForController::class,'for4']);
-Route::get('/for5/{konfet}',[ForController::class,'for5']);
-Route::get('/for6/{cand}',[ForController::class,'for6']);
-Route::get('/for7/{a}/{b}',[ForController::class,'for7']);
-Route::get('/for8/{a}/{b}',[ForController::class,'for8']);
-Route::get('/for9/{a}/{b}',[ForController::class,'for9']);
-Route::get('/for10/{n}',[ForController::class,'for10']);
-Route::get('/for11/{n}',[ForController::class,'for11']);
-// Route::get('/for11/{n}',[ForController::class,'for11']);
 
+Route::prefix('fur')->group(function () {
 
+    Route::get('/', [PagesController::class,'furIndex'])->name('home');
+    Route::get('/about', [PagesController::class,'furAbout'])->name('about');
+    Route::get('/design', [PagesController::class,'furDesign'])->name('design');
+    Route::get('/shop', [PagesController::class,'furShop'])->name('shop');
+    Route::get('/contact', [PagesController::class,'furContact'])->name('contact');
 
-Route::get('/bol1/{a}',[ForController::class,'bol1']);
-Route::get('/bol2/{a}',[ForController::class,'bol2']);
-Route::get('/bol3/{a}',[ForController::class,'bol3']);
-Route::get('/bol4/{a}/{b}',[ForController::class,'bol4']);
-Route::get('/bol5/{a}/{b}',[ForController::class,'bol5']);
-Route::get('/bol6/{a}/{b}/{c}',[ForController::class,'bol6']);
-Route::get('/bol7/{a}/{b}/{c}',[ForController::class,'bol7']);
-Route::get('/bol8/{a}/{b}',[ForController::class,'bol8']);
-Route::get('/bol9/{a}/{b}',[ForController::class,'bol9']);
-Route::get('/bol10/{a}/{b}',[ForController::class,'bol10']);
-Route::get('/bol11/{a}/{b}',[ForController::class,'bol11']);
-Route::get('/bol12/{a}/{b}/{c}',[ForController::class,'bol12']);
-Route::get('/bol13/{a}/{b}/{c}',[ForController::class,'bol13']);
-Route::get('/bol14/{a}/{b}/{c}',[ForController::class,'bol14']);
-Route::get('/bol15/{a}/{b}/{c}',[ForController::class,'bol15']);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Route::get('/', function () {
-    return view('welcome');
 });
 
-Route::get('/test/{name}/{surname}', function ($name, $surname) {
-    return "Assalomu alaykum" . "<br> My name is $name" . "<br> My surname is $surname";
-});
 
-Route::get('/A', function () {
-    return 'Azizbek Jo\'rayev';
-});
-Route::get('/Sh', function () {
-    return 'Shohrux Holiqulov';
-});
 
-Route::redirect('Sh', 'A');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Route::get('/index', function () {
@@ -126,11 +100,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::view('/admin10', 'admin.admin10')->name('index10');
 });
-
-
-
-
-
 
 Route::prefix('boss')->name('boss.')->group(function () {
 
@@ -203,32 +172,12 @@ Route::prefix('client')->name('client.')->group(function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ////////////////////////INTEGERS 1////////////
 
 Route::get('/int1/{L}', function ($l) {
     $x = floor($l / 100);
     return 'Berilgan uzunlik ' . $x . ' metr.';
 });
-
-
 
 ////////////////////////INTEGERS 2////////////
 
@@ -237,16 +186,12 @@ Route::get('/int2/{k}', function ($k) {
     return 'Berilgan og\'irlik ' . $y . ' tonna';
 });
 
-
-
 ////////////////////////INTEGERS 3////////////
 
 Route::get('/int3/{b}', function ($b) {
     $c = floor($b / 1024);
     return 'Faylning hajmi ' . $c . ' kilobayt';
 });
-
-
 ////////////////////////INTEGERS 4////////////
 
 Route::get('/int4/{a}/{b}', function ($a, $b) {
@@ -478,3 +423,36 @@ Route::get('/if10/{v}/{b}', function ($v, $b) {
 
     return "A: " . $v . "<br>" . "B: " . $b;
 });
+
+
+Route::get('for1/{k}/{n}',[ForController::class,'for1']);
+Route::get('/for2/{a}/{b}',[ForController::class,'for2']);
+Route::get('/for3/{a}/{b}',[ForController::class,'for3']);
+Route::get('/for4/{qand}',[ForController::class,'for4']);
+Route::get('/for5/{konfet}',[ForController::class,'for5']);
+Route::get('/for6/{cand}',[ForController::class,'for6']);
+Route::get('/for7/{a}/{b}',[ForController::class,'for7']);
+Route::get('/for8/{a}/{b}',[ForController::class,'for8']);
+Route::get('/for9/{a}/{b}',[ForController::class,'for9']);
+Route::get('/for10/{n}',[ForController::class,'for10']);
+Route::get('/for11/{n}',[ForController::class,'for11']);
+// Route::get('/for11/{n}',[ForController::class,'for11']);
+
+
+
+Route::get('/bol1/{a}',[ForController::class,'bol1']);
+Route::get('/bol2/{a}',[ForController::class,'bol2']);
+Route::get('/bol3/{a}',[ForController::class,'bol3']);
+Route::get('/bol4/{a}/{b}',[ForController::class,'bol4']);
+Route::get('/bol5/{a}/{b}',[ForController::class,'bol5']);
+Route::get('/bol6/{a}/{b}/{c}',[ForController::class,'bol6']);
+Route::get('/bol7/{a}/{b}/{c}',[ForController::class,'bol7']);
+Route::get('/bol8/{a}/{b}',[ForController::class,'bol8']);
+Route::get('/bol9/{a}/{b}',[ForController::class,'bol9']);
+Route::get('/bol10/{a}/{b}',[ForController::class,'bol10']);
+Route::get('/bol11/{a}/{b}',[ForController::class,'bol11']);
+Route::get('/bol12/{a}/{b}/{c}',[ForController::class,'bol12']);
+Route::get('/bol13/{a}/{b}/{c}',[ForController::class,'bol13']);
+Route::get('/bol14/{a}/{b}/{c}',[ForController::class,'bol14']);
+Route::get('/bol15/{a}/{b}/{c}',[ForController::class,'bol15']);
+
