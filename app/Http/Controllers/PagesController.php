@@ -25,4 +25,29 @@ class PagesController extends Controller
     public function furContact(){
         return view('pages.contact');
     }
+
+
+    public function jajIndex(){
+        return view('components.pages.main');
+    }
+
+    public function jajClass(){
+        return view('components.pages.class');
+    }
+
+    public function jajTeacher(){
+        return view('components.pages.teachers');
+    }
+
+    public function jajWins(){
+        return view('components.pages.wins');
+    }
+
+    public function jajGallery(){
+        return view('components.pages.gallery');
+    }
+
+    public function jajArticle(){
+        return view('components.pages.article');
+    }
 }

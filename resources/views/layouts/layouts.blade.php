@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Fur</title>
+    <title>@yield('title','Furniture')</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -59,6 +59,8 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href={{ route('contact') }}>Contact</a>
+                        </li>
+                        <l-item>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">

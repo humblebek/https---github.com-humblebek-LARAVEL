@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ForController;
+use App\Http\Controllers\JpagesController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,8 +33,14 @@ Route::prefix('fur')->group(function () {
 
 
 
-
-
+Route::prefix('jaj')->group(function(){
+    Route::get('/', [PagesController::class,'jajIndex'])->name('main');
+    Route::get('/class', [PagesController::class,'jajClass'])->name('class');
+    Route::get('/teacher', [PagesController::class,'jajTeacher'])->name('teacher');
+    Route::get('/wins', [PagesController::class,'jajWins'])->name('wins');
+    Route::get('/gallery', [PagesController::class,'jajGallery'])->name('gallery');
+    Route::get('/article', [PagesController::class,'jajArticle'])->name('article');
+});
 
 
 
