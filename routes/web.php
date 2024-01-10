@@ -43,15 +43,8 @@ Route::prefix('jaj')->group(function(){
 });
 
 
-
-
-
-
-
-
-
-
-
+Route::get('/form/{count}', [PagesController::class, 'form']) ;
+Route::post('/create', [PagesController::class, 'create']) ;
 
 
 
